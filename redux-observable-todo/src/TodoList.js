@@ -11,6 +11,7 @@ const TodoList = () => {
   const handleAddTodo = () => {
     const duplicateToDoCheck = todos.filter((todo) => todo.text === newTodo)
     if(duplicateToDoCheck.length === 0){
+       //For Redux Observable integration give the type as ADD_TODO_REQUEST, now redux observable is not integrated because the api call is not correct one in epic.js file. Now it is simple redux
         dispatch({ type: 'ADD_TODO', payload: {text: newTodo } }); 
         setNewTodo('');
         notification.success({
